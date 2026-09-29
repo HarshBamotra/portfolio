@@ -1,0 +1,36 @@
+:root {
+  --bg: #0F1B2D;
+  --bg-raised: #142842;
+  --bg-panel: #122544;
+  --grid-line: #1E3554;
+  --ink: #E9EEF5;
+  --ink-dim: #8FA3BE;
+  --ink-faint: #5A7191;
+  --amber: #38BDF8; /* Modern Electric Cyan accent */
+  --amber-dim: #0284C7;
+  --live: #34D399;
+  --rule: #2A4468;
+  --code-bg: #0C1626;
+
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'IBM Plex Mono', 'SF Mono', Consolas, monospace;
+
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="light"] {
+  --bg: #F8FAFC;
+  --bg-raised: #FFFFFF;
+  --bg-panel: #F1F5F9;
+  --grid-line: #E2E8F0;
+  --ink: #0F172A;
+  --ink-dim: #334155;
+  --ink-faint: #64748B;
+  --amber: #4F46E5; /* Solid Indigo Blue accent */
+  --amber-dim: #4338CA;
+  --live: #10B981;
+  --rule: #E2E8F0;
+  --code-bg: #F1F5F9;
+}

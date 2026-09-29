@@ -1,0 +1,145 @@
+.hero-section {
+  min-height: calc(100vh - 120px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 0 80px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-main {
+  width: 100%;
+}
+
+.hero-aside-widget {
+  width: 100%;
+}
+
+.hero-title-block {
+  margin-top: 0;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 18px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.hero-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: var(--amber);
+  margin-bottom: 24px;
+}
+
+.badge-line {
+  height: 1px;
+  width: 32px;
+  background: var(--amber);
+}
+
+.hero-display-name {
+  font-size: clamp(2.75rem, 6vw, 4.5rem);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+  margin-bottom: 16px;
+}
+
+.accent-dot {
+  color: var(--amber);
+}
+
+.hero-role-subtitle {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 20px;
+}
+
+.hero-summary-text {
+  color: var(--ink-dim);
+  font-size: 0.98rem;
+  line-height: 1.7;
+  max-width: 580px;
+  margin-bottom: 32px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.btn-accent {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--amber);
+  color: var(--bg);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 12px 24px;
+  border-radius: 999px;
+  transition: all var(--transition-fast);
+}
+
+.btn-accent:hover {
+  background: var(--amber-dim);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-raised);
+  border: 1px solid var(--rule);
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 12px 24px;
+  border-radius: 999px;
+  transition: all var(--transition-fast);
+}
+
+.btn-outline:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+  transform: translateY(-2px);
+}
+
+.hero-social-strip {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.hero-social-strip a {
+  color: var(--ink-dim);
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.hero-social-strip a:hover {
+  color: var(--amber);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}

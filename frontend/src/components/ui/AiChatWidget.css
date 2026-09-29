@@ -1,0 +1,241 @@
+.ai-chat-widget {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 420px;
+  border-radius: 12px;
+  border: 1px solid var(--rule);
+  background: var(--bg-panel);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.ai-chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--rule);
+  background: var(--bg-raised);
+}
+
+.ai-chat-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ai-bot-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: rgba(79, 70, 229, 0.12);
+  border: 1px solid var(--rule);
+  color: var(--amber);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ai-chat-title h4 {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.ai-status {
+  font-size: 0.72rem;
+  color: var(--ink-faint);
+  display: flex;
+  align-items: center;
+  margin-top: 1px;
+}
+
+.ai-reset-btn {
+  color: var(--ink-faint);
+  padding: 6px;
+  border-radius: 6px;
+  transition: all var(--transition-fast);
+}
+
+.ai-reset-btn:hover {
+  color: var(--amber);
+  background: var(--bg-panel);
+}
+
+/* Chat Messages Thread */
+.ai-chat-messages {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chat-bubble-row {
+  display: flex;
+  gap: 10px;
+  max-width: 85%;
+}
+
+.chat-bubble-row.ai {
+  align-self: flex-start;
+}
+
+.chat-bubble-row.user {
+  align-self: flex-end;
+  flex-direction: row-reverse;
+}
+
+.chat-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--bg-raised);
+  border: 1px solid var(--rule);
+  color: var(--ink-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.chat-bubble-row.ai .chat-avatar {
+  color: var(--amber);
+}
+
+.chat-bubble {
+  background: var(--bg-raised);
+  border: 1px solid var(--rule);
+  padding: 10px 14px;
+  border-radius: 12px;
+  border-top-left-radius: 2px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.chat-bubble-row.user .chat-bubble {
+  background: var(--amber);
+  color: var(--bg);
+  border-color: transparent;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 2px;
+}
+
+.chat-time {
+  display: block;
+  font-size: 0.65rem;
+  color: var(--ink-faint);
+  margin-top: 4px;
+  text-align: right;
+}
+
+.chat-bubble-row.user .chat-time {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Typing indicator */
+.chat-bubble.typing {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 16px;
+}
+
+.dot-pulse {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--amber);
+  animation: typingPulse 1.2s infinite ease-in-out;
+}
+
+.dot-pulse:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.dot-pulse:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typingPulse {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Quick Prompts Chips */
+.ai-quick-prompts {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 8px 16px;
+  border-top: 1px solid var(--rule);
+  background: var(--bg-raised);
+}
+
+.ai-quick-prompts::-webkit-scrollbar {
+  display: none;
+}
+
+.prompt-chip {
+  white-space: nowrap;
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: var(--bg-panel);
+  border: 1px solid var(--rule);
+  color: var(--ink-dim);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all var(--transition-fast);
+}
+
+.prompt-chip:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+}
+
+.chip-sparkle {
+  color: var(--amber);
+}
+
+/* Input Row */
+.ai-chat-input-row {
+  display: flex;
+  align-items: center;
+  padding: 10px 14px;
+  gap: 8px;
+  border-top: 1px solid var(--rule);
+  background: var(--bg-raised);
+}
+
+.ai-chat-input-row input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  font-size: 0.84rem;
+  color: var(--ink);
+  outline: none;
+}
+
+.ai-send-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--amber);
+  color: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity var(--transition-fast);
+}
+
+.ai-send-btn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}

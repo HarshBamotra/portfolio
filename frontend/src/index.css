@@ -1,0 +1,23 @@
+@import './styles/global.css';
+@import './styles/components.css';
+
+/* Loading Screen styling */
+.loading-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-primary);
+}
+
+.spinner {
+  font-size: 1.5rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+  from { opacity: 0.5; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1.02); }
+}

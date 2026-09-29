@@ -1,0 +1,54 @@
+.skills-section {
+  padding: 44px 0;
+}
+
+.capabilities-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.capabilities-title {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-top: 8px;
+}
+
+.capabilities-subtitle {
+  max-width: 320px;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.capability-card {
+  padding: 20px;
+}
+
+.capability-icon {
+  color: var(--amber);
+  margin-bottom: 16px;
+}
+
+.capability-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.capability-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}

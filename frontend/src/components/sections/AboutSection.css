@@ -1,0 +1,35 @@
+.border-t-rule {
+  border-top: 1px solid var(--rule);
+}
+
+.about-section {
+  padding: 80px 0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 40px;
+}
+
+.about-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-top: 16px;
+}
+
+.about-col-right {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.about-col-right p + p {
+  margin-top: 24px;
+}
+
+@media (max-width: 760px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+}
