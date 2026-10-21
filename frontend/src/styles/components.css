@@ -1,7 +1,10 @@
 /* Component specific blueprint styles */
 
 /* Header & Controls */
-header {
+header,
+.site-header {
+  position: relative;
+  z-index: 100;
   padding: 24px 0 0;
 }
 
@@ -10,25 +13,69 @@ header {
   justify-content: space-between;
   align-items: center;
   gap: 16px;
-  flex-wrap: wrap;
+  position: relative;
 }
 
-nav {
+/* Brand Logo / Moniker: Hidden on desktop, visible on mobile */
+.brand-logo {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+  padding: 4px 0;
+  transition: opacity var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.brand-logo:hover {
+  opacity: 0.85;
+}
+
+.brand-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--live);
+  box-shadow: 0 0 0 2px rgba(52, 211, 153, 0.25);
+}
+
+.brand-name {
+  color: var(--ink);
+}
+
+.brand-accent {
+  color: var(--amber);
+}
+
+/* Desktop Navigation */
+nav,
+.nav-desktop {
   display: flex;
+  align-items: center;
   gap: 22px;
   font-family: var(--mono);
   font-size: 0.8rem;
   color: var(--ink-dim);
 }
 
-nav a {
+nav a,
+.nav-desktop a {
   text-decoration: none;
   border-bottom: 1px solid transparent;
   padding-bottom: 2px;
   transition: all var(--transition-fast);
+  white-space: nowrap;
 }
 
-nav a:hover, nav a.active {
+nav a:hover,
+nav a.active,
+.nav-desktop a:hover,
+.nav-desktop a.active {
   border-bottom-color: var(--amber);
   color: var(--ink);
 }
@@ -37,6 +84,8 @@ nav a:hover, nav a.active {
   display: flex;
   align-items: center;
   gap: 14px;
+  margin-left: auto;
+  flex-shrink: 0;
 }
 
 .layer-switch {
@@ -46,6 +95,7 @@ nav a:hover, nav a.active {
   font-size: 0.76rem;
   border-radius: 6px;
   overflow: hidden;
+  background: var(--bg-raised);
 }
 
 .layer-switch button {
@@ -56,6 +106,7 @@ nav a:hover, nav a.active {
   cursor: pointer;
   border-right: 1px solid var(--rule);
   transition: all var(--transition-fast);
+  white-space: nowrap;
 }
 
 .layer-switch button:last-child {
@@ -65,7 +116,7 @@ nav a:hover, nav a.active {
 .layer-switch button[aria-pressed="true"] {
   background: var(--amber);
   color: var(--bg);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .layer-switch button:hover:not([aria-pressed="true"]) {
@@ -84,6 +135,7 @@ nav a:hover, nav a.active {
   cursor: pointer;
   color: var(--ink-dim);
   transition: all var(--transition-fast);
+  flex-shrink: 0;
 }
 
 .theme-toggle:hover {
@@ -92,12 +144,105 @@ nav a:hover, nav a.active {
   transform: translateY(-1px);
 }
 
+/* Mobile Nav Toggle Button */
+.mobile-nav-toggle {
+  display: none;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: var(--bg-raised);
+  cursor: pointer;
+  color: var(--ink-dim);
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.mobile-nav-toggle:hover {
+  color: var(--amber);
+  border-color: var(--amber);
+}
+
+/* Mobile Nav Drawer */
+.mobile-nav-overlay {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mobile-nav-drawer {
+  background: var(--bg-panel);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 18px;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+}
+
+.mobile-nav-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: var(--ink-faint);
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.mobile-nav-mode {
+  color: var(--amber);
+  font-weight: 700;
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mobile-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-family: var(--mono);
+  font-size: 0.88rem;
+  color: var(--ink);
+  transition: all var(--transition-fast);
+}
+
+.mobile-nav-item:hover {
+  background: var(--bg-raised);
+  color: var(--amber);
+  transform: translateX(4px);
+}
+
+.mobile-nav-num {
+  font-size: 0.72rem;
+  color: var(--amber);
+  font-weight: 700;
+  width: 24px;
+}
+
+.mobile-nav-label {
+  font-weight: 500;
+}
+
 .title-block {
   margin-top: 20px;
   display: flex;
   justify-content: flex-start;
   border-bottom: 1px solid var(--rule);
   padding-bottom: 18px;
+  width: 100%;
 }
 
 .field-strip {
@@ -107,6 +252,12 @@ nav a:hover, nav a.active {
   font-size: 0.7rem;
   color: var(--ink-faint);
   text-align: left;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.field-strip div {
+  min-width: fit-content;
 }
 
 .field-strip div span {
@@ -122,6 +273,7 @@ nav a:hover, nav a.active {
   border: 1px solid var(--rule);
   padding: 24px;
   border-radius: 8px;
+  box-sizing: border-box;
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -145,6 +297,7 @@ nav a:hover, nav a.active {
   background: var(--bg-panel);
   border: 1px solid var(--rule);
   color: var(--ink-dim);
+  white-space: nowrap;
 }
 
 /* Live dot indicator */
@@ -158,11 +311,35 @@ nav a:hover, nav a.active {
   box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.2);
 }
 
-@media (max-width: 760px) {
-  .title-block {
-    grid-template-columns: 1fr;
+@media (max-width: 820px) {
+  header,
+  .site-header {
+    padding: 16px 0 0;
+  }
+  .brand-logo {
+    display: inline-flex;
+  }
+  .nav-desktop {
+    display: none;
+  }
+  .mobile-nav-toggle {
+    display: flex;
+  }
+  .controls {
+    margin-left: auto;
+    gap: 8px;
+  }
+  .surface-card {
+    padding: 18px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .layer-switch button {
+    padding: 6px 9px;
+    font-size: 0.72rem;
   }
   .field-strip {
-    text-align: left;
+    gap: 12px 18px;
   }
 }

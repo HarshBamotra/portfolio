@@ -48,11 +48,19 @@ export const HomePage: React.FC = () => {
           }
         });
       },
-      { threshold: 0.08 }
+      { threshold: 0.02, rootMargin: '0px 0px 40px 0px' }
     );
 
     const elements = document.querySelectorAll('.reveal');
-    elements.forEach((el) => observer.observe(el));
+    elements.forEach((el) => {
+      // If already in viewport on load, reveal immediately
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight) {
+        el.classList.add('visible');
+      } else {
+        observer.observe(el);
+      }
+    });
 
     return () => {
       elements.forEach((el) => observer.unobserve(el));

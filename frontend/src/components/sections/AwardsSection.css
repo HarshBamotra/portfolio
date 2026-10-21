@@ -1,11 +1,17 @@
 .awards-section {
   padding: 44px 0;
+  box-sizing: border-box;
 }
 
 .awards-grid {
   display: grid;
   grid-template-columns: 0.7fr 1.3fr;
   gap: 40px;
+  min-width: 0;
+}
+
+.awards-header {
+  min-width: 0;
 }
 
 .awards-title {
@@ -13,11 +19,13 @@
   font-weight: 700;
   line-height: 1.1;
   margin-top: 12px;
+  word-break: break-word;
 }
 
 .awards-list {
   display: flex;
   flex-direction: column;
+  min-width: 0;
 }
 
 .award-row {
@@ -25,6 +33,7 @@
   gap: 20px;
   padding: 24px 0;
   border-bottom: 1px solid var(--rule);
+  min-width: 0;
 }
 
 .award-row:last-child {
@@ -46,6 +55,7 @@
   font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 4px;
+  word-break: break-word;
 }
 
 .award-row-subtitle {
@@ -54,7 +64,15 @@
 }
 
 @media (max-width: 760px) {
+  .awards-section {
+    padding: 32px 0;
+  }
   .awards-grid {
     grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .award-row {
+    padding: 16px 0;
+    gap: 14px;
   }
 }

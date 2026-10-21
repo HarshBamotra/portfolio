@@ -1,10 +1,12 @@
 .experience-section {
   padding: 44px 0;
+  box-sizing: border-box;
 }
 
 .timeline {
   position: relative;
   padding-left: 26px;
+  min-width: 0;
 }
 
 .timeline::before {
@@ -20,6 +22,7 @@
 .tl-item {
   position: relative;
   padding-bottom: 32px;
+  min-width: 0;
 }
 
 .tl-item:last-child {
@@ -42,6 +45,15 @@
   display: grid;
   grid-template-columns: 200px 1fr;
   gap: 24px;
+  min-width: 0;
+}
+
+.tl-meta {
+  min-width: 0;
+}
+
+.tl-content {
+  min-width: 0;
 }
 
 .tl-period {
@@ -61,6 +73,7 @@
   font-size: 1.3rem;
   font-weight: 700;
   margin-bottom: 12px;
+  word-break: break-word;
 }
 
 .tl-role-title {
@@ -81,8 +94,23 @@
 }
 
 @media (max-width: 760px) {
+  .experience-section {
+    padding: 32px 0;
+  }
   .tl-grid {
     grid-template-columns: 1fr;
     gap: 8px;
+  }
+}
+
+@media (max-width: 440px) {
+  .timeline {
+    padding-left: 20px;
+  }
+  .timeline::before {
+    left: 4px;
+  }
+  .tl-item::before {
+    left: -20px;
   }
 }
